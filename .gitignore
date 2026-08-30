@@ -1,0 +1,12 @@
+# Ignore everything by default
+*
+
+# Allow directories to be traversed
+!*/
+
+# Track .gitignore
+!.gitignore
+
+# Track assignment notebooks and final reports
+!Experiment */expt-*.ipynb
+!Experiment */expt-*.pdf
