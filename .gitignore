@@ -7,6 +7,10 @@
 # Track .gitignore
 !.gitignore
 
-# Track assignment notebooks and final reports
+# Track assignment notebooks, final reports, readmes, and dependencies
 !Experiment */expt-*.ipynb
 !Experiment */expt-*.pdf
+!Experiment */README.md
+!Experiment */requirements.txt
+
+
