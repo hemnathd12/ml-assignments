@@ -10,9 +10,9 @@ To study the effect of dimensionality reduction using Principal Component Analys
 
 ## Datasets
 - Iris: 150 samples, 4 continuous features, 3 classes (reduced to 2 components, 95.81% variance explained)
-- Breast Cancer Wisconsin Diagnostic (WDBC): 569 samples, 30 features, binary classification (reduced to 6 components, 88.76% variance explained)
-- Spambase: 4,601 samples, 57 features, binary classification (reduced to 10 components, 90.12% variance explained)
-- Optical Recognition of Handwritten Digits: 1,797 samples, 64 features, 10 classes (reduced to 16 components, 90.45% variance explained)
+- Breast Cancer Wisconsin Diagnostic (WDBC): 569 samples, 30 features, binary classification (reduced to 7 components, 91.01% variance explained)
+- Spambase: 4,601 samples, 57 features, binary classification (reduced to 43 components, 90.39% variance explained)
+- Optical Recognition of Handwritten Digits: 1,797 samples, 64 features, 10 classes (reduced to 31 components, 90.05% variance explained)
 
 ## Models Evaluated
 1. Support Vector Machine (SVM)
@@ -28,7 +28,7 @@ To study the effect of dimensionality reduction using Principal Component Analys
 
 ## Methodological Workflow
 - Feature Preprocessing: Leakage-free standardization using StandardScaler fitted strictly on training folds.
-- Dimensionality Reduction: Principal Component Analysis (PCA) fitted on training partitions.
+- Dimensionality Reduction: Principal Component Analysis (PCA) fitted on training partitions, with the number of components selected automatically per dataset as the smallest k reaching 90% cumulative explained variance.
 - Hyperparameter Tuning: Exhaustive grid search over defined parameter spaces evaluated with 5-fold cross-validation independently for No-PCA and With-PCA.
 - Cross-Validation: Stratified 5-fold cross-validation recording fold-wise accuracy, F1-scores, and overall means.
 - Statistical Significance Testing: Paired two-sample Student t-test and Wilcoxon Signed-Rank test directly comparing paired fold metrics between No-PCA and With-PCA conditions.
